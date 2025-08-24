@@ -1,0 +1,19 @@
+services:
+  stable-diffusion:
+    container_name: stable-diffusion
+    restart: unless-stopped
+    image: vladflorinilie/sd-docker:latest
+    ports:
+      - 7860:7860
+    volumes:
+      - ./sd-data:/opt/stable-diffusion-webui
+    command: 
+      - --api
+      - --listen
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all 
+              capabilities: [gpu]

@@ -11,7 +11,7 @@ runuser -u sd -- /bin/bash -s -- "$@" <<'EOF'
     set -euo pipefail
 
     if [ ! -d "$TARGET_DIR/.git" ]; then
-        echo "Cloning stable-diffusion-webui into $TARGET_DIR..."
+        echo "testCloning stable-diffusion-webui into $TARGET_DIR..."
         git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui "$TARGET_DIR"
         chmod +x "$TARGET_DIR/webui.sh"
         whoami

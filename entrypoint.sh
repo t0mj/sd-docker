@@ -14,6 +14,9 @@ runuser -u sd -- /bin/bash -s -- "$@" <<'EOF'
         echo "Cloning stable-diffusion-webui into $TARGET_DIR..."
         git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui "$TARGET_DIR"
         chmod +x "$TARGET_DIR/webui.sh"
+        whoami
+        id
+        ls -al $TARGET_DIR
     fi
 
     cd "$TARGET_DIR"

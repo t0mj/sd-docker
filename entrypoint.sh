@@ -13,7 +13,7 @@ runuser -u sd -- /bin/bash -s -- "$@" <<'EOF'
     if [ ! -d "$TARGET_DIR/.git" ]; then
         echo "Cloning stable-diffusion-webui into $TARGET_DIR..."
         git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui "$TARGET_DIR"
-        chmod 755 "$TARGET_DIR/webui.sh"
+        chmod +x "$TARGET_DIR/webui.sh"
     fi
 
     cd "$TARGET_DIR"

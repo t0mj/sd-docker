@@ -17,5 +17,6 @@ runuser -u sd -- /bin/bash -s -- "$@" <<'EOF'
 
     cd "$TARGET_DIR"
     [ -d "venv" ] || python3.10 -m venv venv
+    chmod 755 ./webui.sh
     ./webui.sh "$@"
 EOF

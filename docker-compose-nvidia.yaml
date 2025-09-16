@@ -7,7 +7,10 @@ services:
       - 7860:7860
     volumes:
       - ./sd-data:/opt/stable-diffusion-webui
-    command: 
+    command: >
+      sh -c "chmod 755 /app/your_script_or_binary && exec mybinary \"$@\""
+    # Pass the original args through `$@`
+    args:
       - --api
       - --listen
     deploy:

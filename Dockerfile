@@ -14,4 +14,4 @@ RUN useradd -ms /bin/bash sd && \
 VOLUME /opt/stable-diffusion-webui
 EXPOSE 7860
 
-ENTRYPOINT [ "/opt/entrypoint.sh" ]
+ENTRYPOINT [ "sh", "/opt/entrypoint.sh" ]

@@ -8,11 +8,8 @@ services:
     volumes:
       - ./sd-data:/opt/stable-diffusion-webui
     command: >
-      sh -c "chmod 755 /app/your_script_or_binary && exec mybinary \"$@\""
-    # Pass the original args through `$@`
-    args:
-      - --api
-      - --listen
+      sh -c "chmod 755 /app/your_script_or_binary && exec mybinary \"$@\"" \
+            --api --listen
     deploy:
       resources:
         reservations:

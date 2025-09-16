@@ -7,9 +7,9 @@ services:
       - 7860:7860
     volumes:
       - ./sd-data:/opt/stable-diffusion-webui
-    command: >
-      sh -c "chmod 755 /opt/stable-diffusion-webui/webui.sh \"$@\"" \
-            --api --listen
+    command: 
+      - --api
+      - --listen
     deploy:
       resources:
         reservations:

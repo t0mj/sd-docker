@@ -8,7 +8,6 @@ RUN useradd -ms /bin/bash sd && \
     mkdir -p /opt/stable-diffusion-webui && \
     chown sd:sd /opt/stable-diffusion-webui && \
     chmod +x /opt/entrypoint.sh
-    chmod +x /opt/stable-diffusion-webui/webui.sh
 
 VOLUME /opt/stable-diffusion-webui
 EXPOSE 7860
